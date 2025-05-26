@@ -1,0 +1,30 @@
+based on this file architecture job-search-app/
+├── src/
+│   ├── api/
+│   │   ├── client.js                  # Axios instance for API calls
+│   │   ├── jobs.js                    # API functions for general and remote jobs
+│   │   ├── salaries.js                # API functions for salary estimation
+│   ├── components/
+│   │   ├── JobCard.js                 # Reusable job card component
+│   │   ├── SearchBar.js               # Reusable search bar component
+│   │   ├── SalaryForm.js              # Form for salary estimation input
+│   │   ├── LoadingSpinner.js          # Reusable loading spinner
+│   │   ├── ErrorMessage.js            # Reusable error message component
+│   ├── screens/
+│   │   ├── GeneralJobsScreen.js       # General jobs list screen
+│   │   ├── RemoteJobsScreen.js        # Remote jobs list screen
+│   │   ├── SalariesScreen.js          # Salary estimation screen
+│   │   ├── JobDetailScreen.js         # Job detail screen for both job types
+│   ├── navigation/
+│   │   ├── AppNavigator.js            # React Navigation setup
+│   ├── theme/
+│   │   ├── theme.js                   # Theme configuration (colors, fonts, etc.)
+│   ├── utils/
+│   │   ├── constants.js               # App-wide constants (e.g., API base URL)
+│   ├── App.js                         # Main app entry point
+├── package.json                       # Project dependencies
+├── metro.config.js                    # Metro bundler configuration
+├── babel.config.js                    # Babel configuration
+├── .gitignore                         # Git ignore file"   i want to build an app (a job portail from job i did scrape from other sites .
+
+let's start by defining theme then AppNavigator & app.js file   we'll make really attractive beautiful and really eyes  details
