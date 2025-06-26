@@ -27,36 +27,9 @@ based on this file architecture job-search-app/
 ├── babel.config.js                    # Babel configuration
 ├── .gitignore                         # Git ignore file"   i want to build an app (a job portail from job i did scrape from other sites .
 
-so far we defined our theme.js file.  now let's work on RemoteJob. 
-knowing that a  job is structure as follow "  {
-        company: "AllTrails",
-        company_logo: "N/A",
-        job_id: "1093238",
-        job_type: "Remote",
-        job_url:
-          "https://remoteok.com/remote-jobs/remote-software-engineer-ii-android-alltrails-1093238",
-        location: "Remote",
-        posted_at: "13h",
-        salary: "N/A",
-        scraped_at: "2025-05-26T13:35:06.673677",
-        source: "RemoteOK",
-        tags: [
-          "Software",
-          "Design",
-          "Training",
-          "Testing",
-          "Test",
-          "UI",
-          "Edu",
-          "Investment",
-          "Java",
-          "Mobile",
-          "Android",
-          "Go",
-        ],
-        title: "Software Engineer II Android",
-      },  "  let"'s build the list component we may import implement two view style (list and card)
-  let's build a really beautiful component the best mobile app job listing screen ever made.
+so far we defined our theme.js file.  now let's work on salary
+  let"'s build the list component we may import implement two view style (list and card)
+  let's build a really beautiful component the best mobile app salaries listing screen ever made.
    well styled ; beautiful; amazing. the theme file looks like 
    "export const theme = {
   colors: {
@@ -127,3 +100,4 @@ knowing that a  job is structure as follow "  {
 };"
 
 display additional informations in a custom beautiful and styled modal onclick on a job handle search 
+we'll scrap data from the web allowing search also . by default we'll display it salaries range . 

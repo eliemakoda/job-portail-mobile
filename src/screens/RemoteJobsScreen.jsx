@@ -87,7 +87,7 @@ const RemoteJobsScreen = () => {
   const loadJobs = async () => {
     setLoading(true);
       setJobs(RemoteJobs||[]);
-      setFilteredJobs([]);
+      setFilteredJobs(RemoteJobs||[]);
       setLoading(false);
   };
 
@@ -312,7 +312,7 @@ const RemoteJobsScreen = () => {
         </View>
         <View style={styles.headerStats}>
           <View style={styles.statItem}>
-            <Text style={styles.statNumber}>{filteredJobs.length}</Text>
+            <Text style={styles.statNumber}>{jobs?.length}</Text>
             <Text style={styles.statLabel}>Jobs</Text>
           </View>
           <View style={styles.statDivider} />
@@ -371,7 +371,7 @@ const RemoteJobsScreen = () => {
 
       {/* Job List */}
       <FlatList
-        data={filteredJobs}
+        data={jobs}
         renderItem={viewMode === 'card' ? renderJobCard : renderJobList}
         keyExtractor={(item) => item.job_id}
         contentContainerStyle={styles.listContainer}
