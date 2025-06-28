@@ -13,7 +13,7 @@ import {
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { theme } from '../theme/theme';
-import { Jobs } from '../data/jobs';
+import { API_BASE_URL } from '../constant';
 const { width } = Dimensions.get('window');
 
 const GeneralJobsScreen = ({ navigation }) => {
@@ -23,7 +23,6 @@ const GeneralJobsScreen = ({ navigation }) => {
   const [viewMode, setViewMode] = useState('list'); // 'card' or 'list'
   const [searchQuery, setSearchQuery] = useState('');
 
- 
   useEffect(() => {
     loadJobs();
   }, []);
@@ -31,10 +30,11 @@ const GeneralJobsScreen = ({ navigation }) => {
   const loadJobs = async () => {
     try {
       setLoading(true);
-      setTimeout(() => {
-        setJobs(Jobs);
-        setLoading(false);
-      }, 1000);
+      const response = await fetch(`${API_BASE_URL}/jobs`);
+      const data =  await response.json();
+      console.log('Jobs loaded:', data); // Debugging line
+      setJobs(data?.data|| []);
+      setLoading(false);
     } catch (error) {
       console.error('Error loading jobs:', error);
       setLoading(false);
@@ -257,7 +257,6 @@ const GeneralJobsScreen = ({ navigation }) => {
     </View>
   );
 };
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,

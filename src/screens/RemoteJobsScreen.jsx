@@ -16,7 +16,7 @@ import {
 } from 'react-native';
 import { Ionicons, MaterialIcons } from '@expo/vector-icons';
 import { theme } from '../theme/theme';
-import { RemoteJobs } from '../data/remote';
+import { API_BASE_URL } from '../constant';
 
 const { width, height } = Dimensions.get('window');
 
@@ -85,10 +85,17 @@ const RemoteJobsScreen = () => {
   }, []);
 
   const loadJobs = async () => {
-    setLoading(true);
-      setJobs(RemoteJobs||[]);
-      setFilteredJobs(RemoteJobs||[]);
+    try {
+      setLoading(true);
+      const response = await fetch(`${API_BASE_URL}/remote-jobs`);
+      const data = await response.json();
+      setJobs(data.data);
+      setFilteredJobs(data);
       setLoading(false);
+    } catch (error) {
+      console.error('Error loading jobs:', error);
+      setLoading(false);
+    }
   };
 
   const handleSearch = (query) => {
@@ -560,6 +567,7 @@ const RemoteJobsScreen = () => {
     </SafeAreaView>
   );
 };
+
 
 const styles = StyleSheet.create({
   container: {
